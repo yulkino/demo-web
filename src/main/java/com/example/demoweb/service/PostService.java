@@ -13,7 +13,7 @@ public class PostService {
         return Arrays.asList(
                 new Post("Сентябрь горит", 11),
                 new Post("Здесь могла быть ваша реклама", 333),
-                new Post("17", 9876)
+                new Post("17", 987)
         );
     }
 }
