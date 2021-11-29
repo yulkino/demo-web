@@ -23,7 +23,7 @@ public class Post implements Serializable {
         this.id = id;
         this.text = text;
         int max = 500;
-        this.likes = (int) (Math.random() * ++max);
+        this.likes = 0;
         this.creationDate = creationDate;
     }
 

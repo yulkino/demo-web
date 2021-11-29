@@ -1,5 +1,6 @@
 package com.example.demoweb.service;
 
+import com.example.demoweb.model.DateProvider;
 import com.example.demoweb.model.Post;
 import com.example.demoweb.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,15 +12,17 @@ import java.util.List;
 
 @Service
 public class PostService {
+    PostRepository postRepository;
+    DateProvider dateProvider;
 
     @Autowired
-    PostRepository postRepository;
-
-    public PostService() {
+    public PostService(PostRepository postRepository, DateProvider dateProvider) {
+        this.postRepository = postRepository;
+        this.dateProvider = dateProvider;
     }
 
     public void create(String text) {
-        Post post = new Post(null, text, new Date());
+        Post post = new Post(null, text, dateProvider.getDate());
         postRepository.save(post);
     }
 

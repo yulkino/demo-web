@@ -8,8 +8,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class LikesService {
 
-    @Autowired
     PostRepository postRepository;
+
+    @Autowired
+    public LikesService(PostRepository postRepository){
+        this.postRepository = postRepository;
+    }
 
     public int like(Long postId)
     {
